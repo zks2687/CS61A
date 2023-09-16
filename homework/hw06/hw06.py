@@ -288,6 +288,8 @@ def remove_all(link , value):
     if link.rest == ():
         return
     if link.rest == value:
+        # If use 'link = link.rest', just create new variable, change not reflected to origin linked list
+        # mutate linked list
         link.rest = link.rest.rest
         remove_all(link, value)
     else:
